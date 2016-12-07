@@ -9,6 +9,10 @@
         "sourceMap": true,
         "outDir": "./dist"
     },
+    "files": [
+        "./declarations.d.ts",
+        "./page/index.tsx"
+    ],
     "exclude": [
         "node_modules"
     ]
