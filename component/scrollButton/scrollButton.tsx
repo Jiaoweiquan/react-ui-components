@@ -33,6 +33,7 @@ export class ScrollButton extends Component<ScrollProps, ScrollState> {
             else this.state.value -=1
         }
         this.forceUpdate()
+        if(this.props.onChange) this.props.onChange(this.state.value)
     }
 
     handleClick() {

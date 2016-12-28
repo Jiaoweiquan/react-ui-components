@@ -1,9 +1,60 @@
 body {
     background: lightblue;
-    padding: 100px;
+    padding: 0 100px;
     font: 12px/1.5 'Arial','宋体';
 }
 
+h1 {
+    text-align: center;
+    font-weight: normal;
+}
+
+h1:before {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 100px;
+    background: #333;
+    vertical-align: middle;
+    position: relative;
+    right: 5px;
+}
+
+h1:after {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 100px;
+    background: #333;
+    vertical-align: middle;
+    position: relative;
+    left: 5px;
+}
+
+
 section{
     margin: 100px 0;
+}
+
+.cardSection > div{
+    margin: 0;
+}
+
+.scrollButtonSection {
+
+}
+
+.scrollButtonSection .jvq-rollBtn {
+    display: inline-block;
+}
+
+.scrollButtonSection .expand {
+    height: 2px;
+    vertical-align: bottom;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 100px;
+    background: rgb(76, 112, 149);  
+    transition: all 0.5s;
 }
