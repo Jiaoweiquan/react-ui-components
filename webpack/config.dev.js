@@ -7,6 +7,7 @@ function cd(p) {
 }
 
 module.exports = {
+    devtool: 'source-map',
     entry:{
         app: [
             cd('page/index.tsx')
