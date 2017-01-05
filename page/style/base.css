@@ -1,5 +1,5 @@
 body {
-    background: lightblue;
+    background: hsl(200, 50%, 80%);
     padding: 0 100px;
     font: 12px/1.5 'Arial','宋体';
 }

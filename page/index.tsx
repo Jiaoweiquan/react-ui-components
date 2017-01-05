@@ -6,6 +6,7 @@ import {initRefresher} from '../utils/refresher'
 import CardSection from './cardSection'
 import ScrollButtonSection from './scrollButtonSection'
 import RecordSection from './recordSection'
+import WaveMap from '../component/waveMap'
 
 function main() {
     ReactDOM.render(
@@ -14,6 +15,7 @@ function main() {
             <CardSection />
             <ScrollButtonSection />
             <RecordSection />
+            <WaveMap />
         </div>,
         document.getElementById('root')!
     )
