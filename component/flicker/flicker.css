@@ -1,0 +1,18 @@
+@keyframes flicker {
+    from {
+        /*background-color: hsl(57, 60%, 80%);             */
+    }
+
+    to {
+        background-color: hsla(0, 100%, 100%, 0);      
+    }
+}
+
+.jvq-flicker {
+    background-color: hsl(57, 60%, 80%);
+	animation-name: flicker;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+    animation-direction: alternate;
+}

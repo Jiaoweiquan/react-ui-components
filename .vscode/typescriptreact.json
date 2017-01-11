@@ -1,0 +1,64 @@
+{
+	"Import React": {
+		"prefix": "impr",
+		"body": [
+			"import * as React from 'react'"
+		]
+	},
+	"Import full": {
+		"prefix": "impf",
+		"body": [
+			"import * as $1 from '$2'"
+		],
+		"description": "import * as Xxx"
+	},
+	"Import many pieces": {
+		"prefix": "impp",
+		"body": [
+			"import { $1 } from '$2'"
+		],
+		"description": "import many pieces"
+	},
+	"import default": {
+		"prefix": "impd",
+		"body": "import $1 from '$2'",
+		"description": "import the default"
+	},
+	"component": {
+		"prefix": "comp",
+		"body": [
+			"import * as React from 'react'\r",
+			"\r",
+			"interface CompProps{\r",
+			"}\r",
+			"\r",
+			"interface CompState{\r",
+			"\r",
+			"}\r",
+			"\r",
+			"export class $1 extends React.Component<CompProps, CompState> {\r",
+			"    static defaultProps= {\r",
+			"    }\r",
+			"\r",
+			"    constructor(props) {\r",
+			"        super(props)\r",
+			"    }\r",
+			"    componentDidMount() {\r",
+			"    }\r",
+			"    componentDidUpdate() {\r",
+			"    }    \r",
+			"\r",
+			"    render() {\r",
+			"        const p = this.props        \r",
+			"        return (\r",
+			"            <div>\r",
+			"                ok\r",
+			"            </div>\r",
+			"        )\r",
+			"    }\r",
+			"}\r",
+			""
+		],
+		"description": "typescript react component template"
+	}
+}

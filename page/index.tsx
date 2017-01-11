@@ -7,6 +7,7 @@ import CardSection from './cardSection'
 import ScrollButtonSection from './scrollButtonSection'
 import RecordSection from './recordSection'
 import WaveMap from '../component/waveMap'
+import Flicker from '../component/flicker'
 
 function main() {
     ReactDOM.render(
@@ -16,6 +17,7 @@ function main() {
             <ScrollButtonSection />
             <RecordSection />
             <WaveMap />
+            <Flicker />
         </div>,
         document.getElementById('root')!
     )
