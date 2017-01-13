@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as recordUtil from '../utils/media'
+import Section from './section'
 
 interface CompState{
     isRecording:boolean;
@@ -47,7 +48,7 @@ export default class extends React.Component<{},CompState>  {
             diff = Date.now() - this.state.ctime.getTime()
             diff = Math.round(diff/1000)
         }
-        return <section>
+        return <Section hue={20}>
             <button onClick={this.handleStart} disabled={isRecording || !hasPermision}>start</button>
             <button onClick={this.handleStop} disabled={!isRecording || !hasPermision} >stop</button>
             {!hasPermision &&
@@ -64,6 +65,6 @@ export default class extends React.Component<{},CompState>  {
                     <audio src={URL.createObjectURL(voice)} controls={true}>hello</audio>
                 </div>
             }
-        </section>
+        </Section>
     }
 }

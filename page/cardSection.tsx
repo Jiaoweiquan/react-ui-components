@@ -1,8 +1,9 @@
 import * as React from 'react'
 import Card from '../component/card'
+import Section from './section'
 
 export default function() {
-    return <section className='cardSection'>
+    return <Section className='cardSection'>
         <Card 
             title={'Anders'} 
             detail={'The author of typescript'}             
@@ -10,5 +11,5 @@ export default function() {
             notation={'59yr'} 
         />    
         {/*<p>Card 用于显示多个独立突出的信息块。</p> */}
-    </section>
+    </Section>
 }

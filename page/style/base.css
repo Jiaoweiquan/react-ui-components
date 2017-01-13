@@ -1,7 +1,8 @@
-body {
+html, body {
     background: hsl(200, 50%, 80%);
-    padding: 0 100px;
+    /*padding: 0 100px;*/
     font: 12px/1.5 'Arial','宋体';
+    margin: 0;
 }
 
 h1 {
@@ -33,7 +34,10 @@ h1:after {
 
 
 section{
-    margin: 100px 0;
+    /*margin: 100px 0;*/
+    padding: 20px 10px;
+    border-bottom: 1px solid hsl(200, 100%, 90%);
+    box-sizing: border-box;
 }
 
 .cardSection > div{

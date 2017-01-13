@@ -10,7 +10,9 @@ module.exports = {
     devtool: 'source-map',
     entry:{
         app: [
-            cd('page/index.tsx')
+            cd('page/index.tsx'),
+            'webpack/hot/only-dev-server',
+            'webpack-dev-server/client'
         ],
         vendors: ['react', 'react-dom']
     },

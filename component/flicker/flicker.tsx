@@ -3,7 +3,8 @@ require('./flicker.css')
 
 interface CompProps{
     style?: React.CSSProperties,
-    color?: string|number;
+    color?: string;
+    hue?: number;
 }
 
 interface CompState{
@@ -23,10 +24,14 @@ export class Flicker extends React.Component<CompProps, CompState> {
     }    
 
     render() {
-        const p = this.props        
+        const p = this.props
+        const style = {
+            ...p.style,
+            backgroundColor: (p.hue === undefined) ? null: `hsl(${p.hue}, 60%, 80%)`
+        }
         return (
-            <div style={p.style} className={'jvq-flicker'}>
-                ok
+            <div style={style} className={'jvq-flicker'}>
+                {p.children}            
             </div>
         )
     }
