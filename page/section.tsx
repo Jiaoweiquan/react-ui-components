@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {isMobile} from '../utils/userAgent'
 
 interface CompProps{
     [attr:string]:any;
@@ -17,21 +18,21 @@ export default class Section extends React.Component<CompProps, CompState> {
     constructor(props) {
         super(props)
         this.state = {
-            height: document.documentElement.clientHeight
+            height: window.innerHeight
         }
     }
     layout = () => {
         this.setState({
-            height: document.documentElement.clientHeight
+            height: window.innerHeight
         })
     }
     componentDidMount() {
-        window.addEventListener('resize', this.layout )
+        !isMobile && window.addEventListener('resize', this.layout )
     }
     componentDidUpdate() {
     }    
     componentWillUnmount() {
-        window.removeEventListener('resize', this.layout)
+        !isMobile && window.removeEventListener('resize', this.layout)
     }
 
     render() {
@@ -40,8 +41,10 @@ export default class Section extends React.Component<CompProps, CompState> {
             height: this.state.height,
             backgroundColor: `hsl(${p.hue}, 50%, 80%)`
         }
+        const rawAttr = {...p}
+        delete rawAttr.hue
         return (
-            <section {...p} style={style}>
+            <section {...rawAttr} style={style}>
                 {p.children}
             </section>
         )

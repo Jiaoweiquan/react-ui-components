@@ -40,6 +40,13 @@ section{
     box-sizing: border-box;
 }
 
+.cardSection {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;    
+}
+
 .cardSection > div{
     margin: 0;
 }
