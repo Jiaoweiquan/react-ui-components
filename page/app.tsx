@@ -7,6 +7,7 @@ import RecordSection from './recordSection'
 import WaveMap from '../component/waveMap'
 import Flicker from '../component/flicker'
 import HoverMenu from '../component/hoverMenu'
+import { tones } from '../utils/tone'
 
 const App = (
     <div>
@@ -22,6 +23,9 @@ const App = (
                 <p> flickering</p>
             </Flicker>
         </Section>
+        <button onClick={() => tones.play(3000)}>
+            play
+        </button>
         <HoverMenu />
     </div>    
 )
