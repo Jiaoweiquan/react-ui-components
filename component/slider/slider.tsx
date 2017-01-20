@@ -3,6 +3,8 @@ import Draggable, {DragEvent} from '../draggable'
 require('./slider.css')
 
 interface CompProps{
+    /** the value varies between 0 ~ 1  */
+    onChange: (percentage:number)=>void;
 }
 
 interface CompState{
@@ -36,9 +38,7 @@ export class Slider extends React.Component<CompProps, CompState> {
 
         if(nextPosition < 0 || nextPosition > (this.barLength - this.pinWidth))
             return
-        this.setState({
-            pinPositon: nextPosition
-        })
+        this.changePosition(nextPosition)
     }
 
     //weird, draggable中stopPropgation只能阻止同为mousedown的事件，而不能阻止上层的onclick事件
@@ -52,9 +52,14 @@ export class Slider extends React.Component<CompProps, CompState> {
         let pos = xAtTarget - this.barWrapperPadding
         pos = Math.max(pos, 0)
         pos = Math.min(pos, this.barLength - this.pinWidth)
+        this.changePosition(pos)
+    }
+
+    changePosition(pos:number) {
         this.setState({
             pinPositon: pos
-        })   
+        })
+        this.props.onChange(pos / (this.barLength - this.pinWidth))
     }
 
     render() {

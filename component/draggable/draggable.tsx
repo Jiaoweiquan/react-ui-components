@@ -36,7 +36,6 @@ export class Draggable extends React.Component<CompProps, CompState> {
 
     /* mouse logic */
     handleMouseDown = (evt:React.MouseEvent<HTMLDivElement>) => {
-        console.log('drag mouse down')
         evt.stopPropagation()        
         evt.preventDefault()
 
