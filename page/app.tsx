@@ -7,8 +7,8 @@ import RecordSection from './recordSection'
 import WaveMap from '../component/waveMap'
 import Flicker from '../component/flicker'
 import HoverMenu from '../component/hoverMenu'
-import { tones } from '../utils/tone'
 import Draggable, { DragEvent } from '../component/draggable'
+import ToneSection from './toneSection'
 
 let hover:HoverMenu
 function moveHover(evt: DragEvent) {
@@ -32,11 +32,7 @@ const App = (
                 <p> flickering</p>
             </Flicker>
         </Section>
-        <Section hue={320}>
-            <button onClick={() => tones.play(3000)}>
-                play
-            </button>      
-        </Section>
+        <ToneSection />
         <Draggable onMove={moveHover}>
             <HoverMenu ref={node=>hover=node}/>
         </Draggable>  

@@ -36,7 +36,8 @@ export class Draggable extends React.Component<CompProps, CompState> {
 
     /* mouse logic */
     handleMouseDown = (evt:React.MouseEvent<HTMLDivElement>) => {
-        console.log('mouse down')
+        console.log('drag mouse down')
+        evt.stopPropagation()        
         evt.preventDefault()
 
         this.preX = this.startX = evt.pageX
@@ -57,6 +58,7 @@ export class Draggable extends React.Component<CompProps, CompState> {
     }
 
     handleMouseMove = (evt: MouseEvent) => {
+        evt.stopPropagation()        
         evt.preventDefault()
         const { pageX, pageY } = evt
         this.props.onMove && this.props.onMove({
@@ -72,7 +74,8 @@ export class Draggable extends React.Component<CompProps, CompState> {
     }
 
     handleMouseUp = (evt: MouseEvent) => {
-        evt.preventDefault()     
+        evt.stopPropagation()          
+        evt.preventDefault()   
         const doc = ReactDOM.findDOMNode(this).ownerDocument;   
         doc.removeEventListener('mousemove', this.handleMouseMove)
         doc.removeEventListener('mouseup', this.handleMouseUp)

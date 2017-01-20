@@ -4,6 +4,7 @@ import {isMobile} from '../utils/userAgent'
 interface CompProps{
     [attr:string]:any;
     hue?:number;
+    color?: string;    
 }
 
 interface CompState{
@@ -36,13 +37,15 @@ export default class Section extends React.Component<CompProps, CompState> {
     }
 
     render() {
-        const p = this.props        
+        const p = this.props  
+        const bgColor = p.color || `hsl(${p.hue}, 50%, 80%)`
         const style = {
             height: this.state.height,
-            backgroundColor: `hsl(${p.hue}, 50%, 80%)`
+            backgroundColor: bgColor
         }
         const rawAttr = {...p}
         delete rawAttr.hue
+        delete rawAttr.color
         return (
             <section {...rawAttr} style={style}>
                 {p.children}
