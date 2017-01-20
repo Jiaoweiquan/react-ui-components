@@ -8,6 +8,15 @@ import WaveMap from '../component/waveMap'
 import Flicker from '../component/flicker'
 import HoverMenu from '../component/hoverMenu'
 import { tones } from '../utils/tone'
+import Draggable, { DragEvent } from '../component/draggable'
+
+let hover:HoverMenu
+function moveHover(evt: DragEvent) {
+    if(!hover) return
+    const offsetX = evt.currentX - evt.preX
+    const offsetY = evt.currentY - evt.preY
+    hover.move(offsetX, offsetY)
+}
 
 const App = (
     <div>
@@ -23,10 +32,15 @@ const App = (
                 <p> flickering</p>
             </Flicker>
         </Section>
-        <button onClick={() => tones.play(3000)}>
-            play
-        </button>
-        <HoverMenu />
+        <Section hue={320}>
+            <button onClick={() => tones.play(3000)}>
+                play
+            </button>      
+        </Section>
+        <Draggable onMove={moveHover}>
+            <HoverMenu ref={node=>hover=node}/>
+        </Draggable>  
+
     </div>    
 )
 
