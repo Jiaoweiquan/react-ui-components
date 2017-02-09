@@ -24,7 +24,7 @@ export class ColorPicker extends React.Component<CompProps, CompState> {
     $colorfulSpots() {
         let ret:any = []
         for(let i=0; i< 7;i++) {
-            const spotStyle = { transform: `rotateZ(${30+30*i}deg)`, backgroundColor:`hsl(${i*55}, 80%, 60%)`}
+            const spotStyle = { transform: `rotateZ(${30+30*i}deg)`, backgroundColor:`hsl(${i*55}, 80%, 50%)`}
             ret.push(<div className="jvq-cp-spot" style={spotStyle}></div>)
         }
         return ret
