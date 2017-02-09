@@ -25,7 +25,7 @@ module.exports = {
         loaders:[
             { test:/\.tsx?$/, loader:'ts-loader', },
             {
-                test:/\.css$/, loader:'style!css'
+                test:/\.(css|less)$/, loader:'style!css!less'
             }
         ]
     },

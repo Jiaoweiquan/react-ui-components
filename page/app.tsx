@@ -9,6 +9,7 @@ import Flicker from '../component/flicker'
 import HoverMenu from '../component/hoverMenu'
 import Draggable, { DragEvent } from '../component/draggable'
 import ToneSection from './toneSection'
+import ColorPickerSection from './colorPickerSection'
 
 let hover:HoverMenu
 function moveHover(evt: DragEvent) {
@@ -33,6 +34,7 @@ const App = (
             </Flicker>
         </Section>
         <ToneSection />
+        <ColorPickerSection />
         <Draggable onMove={moveHover}>
             <HoverMenu ref={node=>hover=node}/>
         </Draggable>  
